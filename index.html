@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Pong Fpga</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Pong Fpga</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#theGame">O Jogo</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projects">Projeto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#architecture">Arquitetura do projeto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#results">Resultados da Síntese</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">Pong em FPGA</h1>
+        <h2 class="text-white mx-auto mt-2 mb-5">Descrição do projeto de desenvolvimento de um jogo pong utilizando
+          FPGA.</h2>
+        <a href="#about" class="btn btn-primary js-scroll-trigger">Inicie Aqui</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <!-- <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">Projeto</h2>
+          <p class="text-white-50">Este projeto foi requerido pela disciplina de circuitos digitais 2, a qual pertence a
+            grade curricular do curso de Engenharia
+            da Computação da Universidade Federal do Recôncavo da Bahia. O referente projeto encontra-se disponível
+            <a href="https://github.com/samuelreboucas07/Projeto-FPGA---pong">neste repositório</a>. Dispondo de todos
+            os códigos desenvolvidos no decorrer deste projeto.</p>
+        </div>
+      </div>
+      <img src="img/altera2.jpg" class="img-fluid" alt="">
+    </div>
+  </section> -->
+
+  <!-- about Section -->
+  <section id="about" class="projects-section bg-light">
+    <div class="container">
+      <!-- <p class="text-white-50"> -->
+        <div class="row align-items-center no-gutters mb-6 mb-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4>Sobre</h4>
+            <p class="text-black-60 mb-0" align=justify>Este projeto foi requerido pela disciplina de circuitos digitais
+              2, a qual pertence a grade curricular do curso de Engenharia da Computação da Universidade Federal do Recôncavo da Bahia. O referente projeto encontra-se disponível
+              <a href="https://github.com/samuelreboucas07/Projeto-FPGA---pong">neste repositório</a>, dispondo de todos
+              os códigos desenvolvidos no decorrer deste projeto.</p>
+            <!-- </p> -->
+        </div>
+        <!-- </div> -->
+    <div class="col-xl-6 col-lg-6">
+      <!-- <img class="img-fluid mb-2 mb-lg-0" src="img/bg-masthead.jpg" alt=""> -->
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/pong2.jpeg"" alt=" First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/pong1.jpeg"" alt=" Second slide">
+          </div>
+          <div class="carousel-item">
+            <!-- <img class="d-block w-100" src="img/videopong.mp4"" alt="Third slide"> -->
+            <video controls>
+              <source src="img/videopong.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-xl-5 col-lg-5" style="margin-top: 30px">
+      <div class="featured-text text-center text-lg-left">
+        <h4>Pong-FPGA</h4>
+        <p class="text-black-60 mb-5" align=justify>
+          O Pong é um jogo eletrônico de esporte em duas dimensões que simula um tênis de mesa.
+          Nele o jogador controla uma barra vertical presente no lado esquerdo da tela,
+          movendo-a verticalmente. O objetivo do jogo é fazer com que o jogador
+          usem a barra para acertar a esfera (bola) e mandá-la para o outro lado.
+          <br> <br>
+          <!-- </p> -->
+          <!-- <p class="text-black-50 mb-5" align=justify> -->
+          A placa utilizada para desenvolvimento do projeto Pong-FPGA foi a <a
+            href="https://www.intel.com/content/dam/altera-www/global/en_US/portal/dsn/42/doc-us-dsnbk-42-1404062209-de2-115-user-manual.pdf">Altera
+            DE2-115</a>. Após a
+          sintetização do projeto na placa, utiliza-se o <i>switch</i> <u><b><i>0</i></b></u> para dar inicio ao
+          jogo. O
+          controle da barra é realizado através do <i>push-button</i> <u><b><i>3</i></b></u>, para movimento
+          vertical superior, e o <i>push-button</i> <u><b><i>2</i></b></u>, para movimento vertical inferior.
+        </p>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section bg-light">
+    <div class="container">
+
+      <!-- Featured Project Row -->
+      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+        <div class="col-xl-12 col-lg-5">
+          <div class="featured-text text-center text-lg-left">
+            <h4>O Projeto</h4>
+            <p class="text-black-60 mb-0" align=justify>O desenvolvimento do projeto teve inicio a partir
+              da criação do controlador de vídeo VGA (Video Graphics Array), o qual, através
+              do uso de contadores, gera o sincronismo de vídeo necessário para o posicionamento
+              das imagens apresentadas no monitor. A Figura a seguir, apresenta o diagrama de blocos do
+              projeto.
+            </p>
+
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5" style="margin-top: 20px">
+              <div class="col-xl-4 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="img/campo_pong.png" alt="">
+              </div>
+              <div class="col-xl-8 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                  <h4>Desenho do jogo</h4>
+                  <p class="text-black-60 mb-0" align=justify>
+                    Esta etapa do projeto baseou-se na especificação do controlador
+                    para realizar o desenho das telas principais do jogo, a tela de apresentação
+                    e a tela de inicio do jogo. A resolução adotada para o projeto foi a de
+                    640x480 pixels. Posteriormente se fez necessário definir as posições
+                    iniciais e finais, em coordenadas cartesianas (x,y), de cada elemento, textual
+                    e/ou gráfico e estabelecer os limites de movimento.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5" style="margin-top: 30px">
+              <div class="col-xl-8 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                  <h4>Controle da barra</h4>
+                  <p class="text-black-60 mb-0" align=justify>
+                    Para realizar o controle de movimento da barra foi desenvolvido
+                    um módulo, chamado de <b>movBola</b>. Este módulo é responsável
+                    por inicializar a barra nas coordenadas iniciais, bem como, realizar
+                    extrair a informação de posicionamento dos elementos da barra, a fim
+                    da reutilização nos módulos posteriores.
+                    <br><br>
+                    Para o controle da intensidade do movimento da barra, isto é, a quantidade
+                    de incremento ou decremento vertical que a mesma terá, utiliza-se um módulo
+                    contador. Ao pressionar o <i>push-button</i> o módulo contador emitir um sinal
+                    positivo, indicando o incremento e/ou decremento.
+                  </p>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="img/controle_BARRA.png" alt="" style="margin-left: 30px">
+              </div>
+            </div>
+
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5" style="margin-top: 20px">
+              <div class="col-xl-12 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                  <h4>Colisão</h4>
+                  <p class="text-black-60 mb-0" align=justify> Após a etapa de desenho do jogo em tela e
+                    geração dos movimentos individuais dos elementos do jogo, tornou-se necessário proporcionar
+                    interação entre estes elementos, de modo que, ao existir contato entre dois elementos, como
+                    por exemplo a bola e a barra, fosse produzida uma reação capaz de alterar o contexto atual do jogo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5" style="margin-top: 20px">
+              <div class="col-xl-8 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                  <h4>Colisão Bola-Barra</h4>
+                  <p class="text-black-60 mb-0" align=justify> A barra foi desenvolvida levando em consideração
+                    diferentes intervalos, sendo estes intervalos responsáveis por gerarem reações distintas na bola
+                    dada uma colisão, por exemplo, a parte superior da barra foi definida de modo
+                    que ao entrar em contado com a bola, fosse produzida uma alteração na orientação
+                    e sentido da bola, sendo assim direcionada à parede superior da arena.
+                  </p>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="img/colisao_bola-barra.png" alt="" style="margin-left: 30px">
+              </div>
+            </div>
+
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5" style="margin-top: 20px">
+              <div class="col-xl-4 col-lg-7">
+                <img class="img-fluid mb-3 mb-lg-0" src="img/colisao_bola-parede.png" alt="">
+              </div>
+              <div class="col-xl-8 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                  <h4>Colisão Bola-Parede</h4>
+                  <p class="text-black-60 mb-0" align=justify> A colisão entre a bola e a parede consta
+                    da verificação do sentido da bola, ou seja, se a bola está se movendo da direita para esquerda, toda
+                    colisão da bola com a parede superior, deve resultar no decremento das coordenadas y da bola,
+                    semelhantemente, a colisão da bola com a parede inferior, deve resultar no incremento das
+                    coordenadas
+                    y da bola.
+                    <br>
+                    De maneira análoga, o resultado das colisões para a bola movendo-se no da esquerda para direita é:
+                    incremento das coordenadas y da bola ao colidir com a barra inferior e decremento das coordenadas y
+                    da
+                    bola ao colidir com a barra superior.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section id="architecture" class="projects-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="mb-4">Arquitetura de projeto</h2>
+          <p class="" align="justify">Este jogo apresenta diferentes cenários possíveis. Mediante a posição em que a
+            bola choca com a barra diferentes
+            reações no que desrespeita ao movimento seguinte da bola poderá vir à acontecer. Entretanto este não é o
+            único cenário possível,
+            ao ocorrer uma colisão entre a bola e a parede, torna-se necessário avaliar o sentido ao qual a bola
+            percorria no momento anterior, de modo que a configuração anterior produzirá impacto direto na reação
+            seguinte.
+            Visto a complexidade desta Arquitetura, abaixo segue a máquina de estado que rege as ações deste jogo, afim
+            de facilitar o entendimento arquitetural do mesmo.</p>
+        </div>
+      </div>
+      <img src="img/Maquina_Estados.png" class="img-fluid" alt="">
+      <div class="col-lg-8 mx-auto">
+        <p class="" align="justify">Ao percorrer a máquina de estados descrita acima é possível examinar todos os
+          estados possíveis do jogo. Uma vez que cada estado possui pelo menos uma transição possível.
+          Desta forma o resultado em termos visuais pode ser descrito da seguinte forma:</p>
+      </div>
+      <div class="col-lg-8 mx-auto" align="center">
+        <img src="img/jogo.gif" class="img-fluid" alt="">
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <!-- Results Section -->
+  <section id="results" class="projects-section bg-light">
+    <div class="container">
+      <div class="col-xl-12 col-lg-5">
+        <div class="featured-text text-center text-lg-left">
+          <h4>Resultados da síntese</h4>
+          <p class="text-black-60 mb-5" align=justify>
+            Os resultados obtidos através da síntese do projeto Pong-FPGA na placa Altera DE2-115,
+            no que se refere ao uso dos recursos da placa, bem como, a pinagem oferecida pela mesma são:
+          </p>
+        </div>
+        <!-- <div class="table-responsive-sm">
+        <table class="table table-hover">
+            <tbody>
+              <tr class="d-flex">
+                <th scope="row">Elementos lógicos</th>
+                <td>1.039</td>
+                <td> 
+                    <tr class="d-flex">
+                      <th scope="row">Modo normal</th>
+                      <td>567</td>
+                    </tr>
+                    <tr class="d-flex">
+                        <th scope="row">Modo aritimético</th>
+                        <td>463</td>
+                    </tr>
+                </td>
+              </tr>
+              <tr class="d-flex">
+                <th scope="row">Funções combinacionais</th>
+                <td>1.030</td>
+              </tr>
+              <tr class="d-flex">
+                <th scope="row">Registradores</th> 
+                <td>179</td>
+              </tr>
+              <tr class="d-flex">
+                  <th scope="row">Pinos I/O</th> 
+                  <td>108</td>
+                </tr>
+              <tr class="d-flex">
+                  <th scope="row">Total Fan-out</th> 
+                  <td>3.690</td>
+                </tr>
+            </tbody>
+          </table> -->
+        <!-- </div> -->
+        <div class="list-group">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item list-group-item-action">Total de Elementos lógicos: 1.039</li>
+            <li class="list-group-item list-group-item-action">Elementos lógicos modo normal: 567</li>
+            <li class="list-group-item list-group-item-action">Elementos lógicos modo aritmético: 463</li>
+            <li class="list-group-item list-group-item-action">Funções combinacionais: 1.030</li>
+            <li class="list-group-item list-group-item-action">Registradores: 179</li>
+            <li class="list-group-item list-group-item-action">Pinos I/O: 108</li>
+            <li class="list-group-item list-group-item-action">Fan-out total: 3.690</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section bg-black align-items-center">
+    <div class="container">
+      <div class="row align-items-center" align="center">
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img src="img/samuel.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Samuel Rebouças de Jesus</h5>
+
+              <a href="https://www.facebook.com/samuel.reboucas.54" class="mx-2">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://github.com/samuelreboucas07" class="mx-2">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img src="img/walber.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">Walber Conceição de Jesus Rocha</h5>
+              <!-- <a href="https://www.facebook.com/WalberRocha1" class="mx-2">
+                <i class="fab fa-facebook-f"></i>
+              </a> -->
+              <a href="https://github.com/rwalber" class="mx-2">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+      <div class="container">
+        Copyright &copy; Samuel Rebouças e Walber Rocha.
+      </div>
+    </footer>
+  </section>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>
